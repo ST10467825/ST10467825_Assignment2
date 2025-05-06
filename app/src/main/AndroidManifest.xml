@@ -13,6 +13,12 @@
         android:theme="@style/Theme.ST10467825_Assignment2"
         tools:targetApi="31">
         <activity
+            android:name=".feedback"
+            android:exported="false" />
+        <activity
+            android:name=".flashcardQuestions"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
