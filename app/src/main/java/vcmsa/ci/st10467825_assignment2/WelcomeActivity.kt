@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.TextView
 import android.widget.Button
 
 class WelcomeActivity : AppCompatActivity() {
@@ -14,9 +13,6 @@ class WelcomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_welcome)
 
         //Declarations
-
-        val titleTextView = findViewById<TextView>(R.id.titleTextView)
-        val descriptionTextView = findViewById<TextView>(R.id.descriptionTextView)
         val startButton = findViewById<Button>(R.id.startButton)
 
 

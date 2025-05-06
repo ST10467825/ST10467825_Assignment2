@@ -24,60 +24,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="362dp"
-        android:layout_marginEnd="260dp"
-        android:layout_marginBottom="322dp"
-        android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="259dp"
-        android:layout_marginTop="362dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="322dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="341dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="342dp"
         android:text="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/answerEditText"
-        android:layout_width="362dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="533dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/feedbackTextView"
-        android:layout_width="312dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="251dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginBottom="429dp"
-        android:text="TextView"
-        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,14 +41,43 @@
         android:id="@+id/scoreTextView"
         android:layout_width="136dp"
         android:layout_height="43dp"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="589dp"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="247dp"
         android:layout_marginEnd="138dp"
-        android:layout_marginBottom="99dp"
+        android:layout_marginBottom="441dp"
         android:text="TextView"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonTrue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="249dp"
+        android:layout_marginTop="161dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="522dp"
+        android:text="True"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonFalse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="161dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="522dp"
+        android:text="False"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
