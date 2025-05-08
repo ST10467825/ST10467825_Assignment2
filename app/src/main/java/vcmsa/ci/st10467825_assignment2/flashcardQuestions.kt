@@ -2,6 +2,7 @@ package vcmsa.ci.st10467825_assignment2
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -11,11 +12,13 @@ import androidx.appcompat.app.AppCompatActivity
 
 class flashcardQuestions : AppCompatActivity() {
 
-    val questionsArray = arrayOf("Is the sun blue?",
-                            "Is Cyril Ramaphosa the president?",
-                            "Is the ocean orange",
-                            "Do Dogs bark?",
-                            "Can humans fly of their own power?")
+    val questionsArray = arrayOf(
+        "Is the sun blue?",
+        "Is Cyril Ramaphosa the president?",
+        "Is the ocean orange",
+        "Do Dogs bark?",
+        "Can humans fly of their own power?"
+    )
 
     val answersArray = arrayOf(false, true, false, true, false)
 
@@ -33,7 +36,7 @@ class flashcardQuestions : AppCompatActivity() {
         setContentView(R.layout.activity_flashcard_questions)
 
         //Declarations
-        val questionView = findViewById< TextView>(R.id.questionTextView)
+        val questionView = findViewById<TextView>(R.id.questionTextView)
         val nextButton = findViewById<Button>(R.id.nextButton)
         val scoreTextView = findViewById<TextView>(R.id.scoreTextView)
         val buttonTrue = findViewById<Button>(R.id.buttonTrue)
@@ -41,57 +44,59 @@ class flashcardQuestions : AppCompatActivity() {
 
         questionView.text = questionsArray[counter]
 
-        buttonFalse.setOnClickListener{
+        buttonFalse.setOnClickListener {
             trueFalse = false
             wasClicked = true
+            buttonFalse.setBackgroundColor(Color.YELLOW)
         }
-        buttonTrue.setOnClickListener{
+        buttonTrue.setOnClickListener {
             trueFalse = true
             wasClicked = true
+            buttonTrue.setBackgroundColor(Color.YELLOW)
         }
 
-        nextButton.setOnClickListener{
-            if (wasClicked == true){
-               userAnswersArray[counter] = trueFalse
+        nextButton.setOnClickListener {
+            if (wasClicked == true) {
+                userAnswersArray[counter] = trueFalse
 
-                if(userAnswersArray[counter] == answersArray[counter]){
+                if (userAnswersArray[counter] == answersArray[counter]) {
                     score++
-                    scoreTextView.text = "your score here"
+                    scoreTextView.text = "Score: " + score + "/5"
                 }
                 //update counter and question
-                if (userAnswersArray[counter] == answersArray[counter]){
+                if (userAnswersArray[counter] == answersArray[counter]) {
                     Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show()
-                }else {
+                } else {
                     Toast.makeText(this, "Incorrect", Toast.LENGTH_SHORT).show()
                 }
 
                 //reset wasclicked
                 wasClicked = false
 
-                if(counter == questionsArray.size-1){
+                buttonTrue.setBackgroundColor(Color.CYAN)
+                buttonFalse.setBackgroundColor(Color.CYAN)
+
+                if (counter == questionsArray.size - 1) {
                     nextButton.text = "Go to Results"
                     nextButton.setOnClickListener{
-                        val intent = Intent(this, feedback:: class.java)
+                        val intent = Intent(this, feedback::class.java)
                         intent.putExtra("questionsArray", questionsArray)
                         intent.putExtra("answersArray", answersArray)
                         intent.putExtra("userAnswersArray", userAnswersArray)
 
                         startActivity(intent)
                     }
+                } else {
+                    counter++
+                    questionView.text = questionsArray[counter]
                 }
-                counter++
-                questionView.text = questionsArray[counter]
 
-            }else{
+            } else {
                 Toast.makeText(this, "You have not answered, idiot", Toast.LENGTH_SHORT).show()
             }
 
 
-
         }
-
-
-
 
 
     }

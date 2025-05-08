@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/second"
     tools:context=".WelcomeActivity">
 
     <TextView
@@ -66,7 +67,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonFalse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,6 +76,7 @@
         android:layout_marginEnd="250dp"
         android:layout_marginBottom="522dp"
         android:text="False"
+        android:background="#00FFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
