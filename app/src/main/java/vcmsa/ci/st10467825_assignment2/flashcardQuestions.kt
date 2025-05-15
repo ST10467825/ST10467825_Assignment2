@@ -13,11 +13,11 @@ import androidx.appcompat.app.AppCompatActivity
 class flashcardQuestions : AppCompatActivity() {
 
     val questionsArray = arrayOf(
-        "Is the sun blue?",
-        "Is Cyril Ramaphosa the president?",
-        "Is the ocean orange",
-        "Do Dogs bark?",
-        "Can humans fly of their own power?"
+        "Cleopatra was Egyptian by birth.",
+        "The Berlin Wall fell in the late 1980s.",
+        "Julius Caesar was the first Roman Emperor.",
+        "The Black Death occurred in the 14th century.",
+        "Javascript was made before Java"
     )
 
     val answersArray = arrayOf(false, true, false, true, false)

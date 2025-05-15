@@ -7,11 +7,15 @@
 
     <!-- Other Views (if any) -->
 
+
+
     <!-- TableLayout with 3 columns and 6 rows -->
     <TableLayout
+        android:id="@+id/FeedbackTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:stretchColumns="*" <!-- Makes columns equally stretch -->
+        android:visibility="invisible"
+        android:stretchColumns="*"></TableLayout> <!-- Makes columns equally stretch -->
 
 
     <!-- Row 1 -->
@@ -54,12 +58,13 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/q1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Is the sun blue?" />
+            android:text="Cleopatra was Egyptian by birth." />
 
         <TextView
             android:layout_width="0dp"
@@ -67,9 +72,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Row 2, Col 2" />
+            android:text="False" />
 
         <TextView
+            android:id="@+id/user0"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -90,7 +96,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Is Cyril Ramaphosa the president?" />
+            android:text="The Berlin Wall fell in the late 1980s." />
 
         <TextView
             android:layout_width="0dp"
@@ -98,9 +104,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Row 3, Col 2" />
+            android:text="True" />
 
         <TextView
+            android:id="@+id/user1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -120,7 +127,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Is the ocean orange" />
+            android:text="Julius Caesar was the first Roman Emperor." />
 
         <TextView
             android:layout_width="0dp"
@@ -128,38 +135,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Row 3, Col 2" />
+            android:text="False" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="Row 3, Col 3" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="Do Dogs bark?" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="Row 3, Col 2" />
-
-        <TextView
+            android:id="@+id/user2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -178,7 +157,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Can humans fly of their own power?" />
+            android:text="The Black Death occurred in the 14th century." />
 
         <TextView
             android:layout_width="0dp"
@@ -186,7 +165,39 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Row 3, Col 2" />
+            android:text="True" />
+
+        <TextView
+            android:id="@+id/user3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Row 3, Col 3" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Javascript was made before Java" />
+
+        <TextView
+            android:id="@+id/user4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="False" />
 
         <TextView
             android:layout_width="0dp"
@@ -196,6 +207,49 @@
             android:padding="8dp"
             android:text="Row 3, Col 3" />
     </TableRow>
+
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:text="Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="185dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        >
+
+        <Button
+            android:id="@+id/buttonReview"
+            android:text="Review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginVertical="40dp"
+            >
+        </Button>
+
+        <Button
+            android:id="@+id/buttonExit"
+            android:text="Exit"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginVertical="50dp"
+            >
+
+        </Button>
+
+
+
+
+    </LinearLayout>
 
 
     <!-- Other Views (if any) -->

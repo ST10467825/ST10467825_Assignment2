@@ -12,18 +12,12 @@
         android:id="@+id/questionTextView"
         android:layout_width="366dp"
         android:layout_height="72dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="61dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="598dp"
         android:fontFamily="sans-serif-black"
         android:text="TextView"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/nextButton"
