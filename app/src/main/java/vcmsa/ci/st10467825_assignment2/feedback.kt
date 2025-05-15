@@ -9,13 +9,11 @@ import android.widget.TableLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.resources.Compatibility.Api21Impl
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class feedback : AppCompatActivity() {
-
-    //Declarations
-
 
 
 
@@ -24,29 +22,57 @@ class feedback : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_feedback)
 
-        //val buttonExit = findViewById<Button>(R.id.buttonExit)
+        //Declarations
+        val buttonExit = findViewById<Button>(R.id.buttonExit)
         val buttonReview = findViewById<Button>(R.id.buttonReview)
         val FeedbackTable = findViewById<TableLayout>(R.id.FeedbackTable)
+        val scoreView = findViewById<TextView>(R.id.scoreView)
+
+        val Q0 = findViewById<TextView>(R.id.Q0)
+        val Q1 = findViewById<TextView>(R.id.Q1)
+        val Q2 = findViewById<TextView>(R.id.Q2)
+        val Q3 = findViewById<TextView>(R.id.Q3)
+        val Q4 = findViewById<TextView>(R.id.Q4)
+
+        val A0 = findViewById<TextView>(R.id.A0)
+        val A1 = findViewById<TextView>(R.id.A1)
+        val A2 = findViewById<TextView>(R.id.A2)
+        val A3 = findViewById<TextView>(R.id.A3)
+        val A4 = findViewById<TextView>(R.id.A4)
+
+        val user0 = findViewById<TextView>(R.id.user0)
+        val user1 = findViewById<TextView>(R.id.user1)
+        val user2 = findViewById<TextView>(R.id.user2)
+        val user3 = findViewById<TextView>(R.id.user3)
+        val user4 = findViewById<TextView>(R.id.user4)
+
+
 
 
         val questionsArray = intent.getStringArrayExtra("questionsArray")
         val answersArray = intent.getBooleanArrayExtra("answersArray")
         val userAnswersArray = intent.getBooleanArrayExtra("usersAnswerArray")
 
+
+
         buttonReview.setOnClickListener{
-            FeedbackTable.visibility = View.VISIBLE
+           FeedbackTable.visibility = View.VISIBLE
         }
 
-        val q1 = findViewById<TextView>(R.id.q1)
-        // q1.text = questionsArray[0]
+        var Q0 = findViewById<TextView>(R.id.Q0)
+         Q0.text = questionsArray[0]
 
 
 
-        //buttonExit.setOnClickListener {
+
+        buttonExit.setOnClickListener {
+            finish()
+        }
+
+        }
             //explicit intent
-            val intent = Intent(this, WelcomeActivity::class.java)
-            startActivity(intent)
+            //val intent = Intent(this, WelcomeActivity::class.java)
+            //startActivity(intent)
 
-        }
     }
 //}

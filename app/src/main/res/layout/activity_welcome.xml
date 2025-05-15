@@ -17,7 +17,7 @@
         android:layout_marginEnd="41dp"
         android:layout_marginBottom="640dp"
         android:fontFamily="sans-serif-black"
-        android:text="General Knowledge Quiz!"
+        android:text="History Quiz!"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"

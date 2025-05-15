@@ -7,8 +7,6 @@
 
     <!-- Other Views (if any) -->
 
-
-
     <!-- TableLayout with 3 columns and 6 rows -->
     <TableLayout
         android:id="@+id/FeedbackTable"
@@ -16,7 +14,6 @@
         android:layout_height="wrap_content"
         android:visibility="invisible"
         android:stretchColumns="*"></TableLayout> <!-- Makes columns equally stretch -->
-
 
     <!-- Row 1 -->
     <TableRow
@@ -58,7 +55,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/q1"
+            android:id="@+id/Q0"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -67,6 +64,7 @@
             android:text="Cleopatra was Egyptian by birth." />
 
         <TextView
+            android:id="@+id/A0"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -81,7 +79,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Row 2, Col 3" />
+            android:text="User answer 1" />
     </TableRow>
 
     <!-- Repeat for Rows 3-6 (or use a loop in Kotlin if dynamic) -->
@@ -91,6 +89,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/Q1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -99,6 +98,7 @@
             android:text="The Berlin Wall fell in the late 1980s." />
 
         <TextView
+            android:id="@+id/A1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -113,7 +113,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Row 3, Col 3" />
+            android:text="User answer 2" />
     </TableRow>
 
     <!-- Add more rows as needed (Row 4, 5, 6) -->
@@ -122,6 +122,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/Q2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -130,6 +131,7 @@
             android:text="Julius Caesar was the first Roman Emperor." />
 
         <TextView
+            android:id="@+id/A2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -144,7 +146,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Row 3, Col 3" />
+            android:text="User answer 3" />
     </TableRow>
 
     <TableRow
@@ -152,6 +154,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/Q3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -160,6 +163,7 @@
             android:text="The Black Death occurred in the 14th century." />
 
         <TextView
+            android:id="@+id/A3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -174,7 +178,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Row 3, Col 3" />
+            android:text="User answer 4" />
     </TableRow>
 
     <TableRow
@@ -183,6 +187,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/Q4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -191,7 +196,7 @@
             android:text="Javascript was made before Java" />
 
         <TextView
-            android:id="@+id/user4"
+            android:id="@+id/A4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -200,57 +205,50 @@
             android:text="False" />
 
         <TextView
+            android:id="@+id/user4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Row 3, Col 3" />
+            android:text="User answer 5"  />
     </TableRow>
 
-    <TextView
-        android:id="@+id/scoreTextView"
-        android:text="Score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginLeft="185dp">
-    </TextView>
-
+    <!-- Bottom buttons and score view -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="200dp"
-        >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
 
-        <Button
-            android:id="@+id/buttonReview"
-            android:text="Review"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="bottom"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginVertical="40dp"
-            >
-        </Button>
-
+        <!-- Exit Button (Left) -->
         <Button
             android:id="@+id/buttonExit"
-            android:text="Exit"
-            android:textAlignment="center"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:layout_marginVertical="50dp"
-            >
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Exit" />
 
-        </Button>
+        <!-- Score TextView (Center) -->
+        <TextView
+            android:id="@+id/scoreView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Score: 0/5"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-
-
-
+        <!-- Review Button (Right) -->
+        <Button
+            android:id="@+id/buttonReview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Review" />
     </LinearLayout>
-
-
-    <!-- Other Views (if any) -->
 </LinearLayout>

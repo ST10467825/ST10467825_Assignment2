@@ -83,6 +83,7 @@ class flashcardQuestions : AppCompatActivity() {
                         intent.putExtra("questionsArray", questionsArray)
                         intent.putExtra("answersArray", answersArray)
                         intent.putExtra("userAnswersArray", userAnswersArray)
+                        intent.putExtra("score", score)
 
                         startActivity(intent)
                     }
