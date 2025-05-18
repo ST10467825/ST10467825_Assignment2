@@ -46,22 +46,21 @@ class feedback : AppCompatActivity() {
         val user3 = findViewById<TextView>(R.id.user3)
         val user4 = findViewById<TextView>(R.id.user4)
 
+        // Populate values dynamically:
+        //questionsArray?.forEachIndexed { index, question ->
+       //     if (index < questionViews.size) questionViews[index].text = question
+        //}
 
 
-
-        val questionsArray = intent.getStringArrayExtra("questionsArray")
-        val answersArray = intent.getBooleanArrayExtra("answersArray")
-        val userAnswersArray = intent.getBooleanArrayExtra("usersAnswerArray")
+        val questionsArray = intent.getStringArrayExtra("questionsArray") ?: arrayOf()
+        val answersArray = intent.getBooleanArrayExtra("answersArray") ?: booleanArrayOf()
+        val userAnswersArray = intent.getBooleanArrayExtra("usersAnswerArray") ?: booleanArrayOf()
 
 
 
         buttonReview.setOnClickListener{
            FeedbackTable.visibility = View.VISIBLE
         }
-
-        var Q0 = findViewById<TextView>(R.id.Q0)
-         Q0.text = questionsArray[0]
-
 
 
 
