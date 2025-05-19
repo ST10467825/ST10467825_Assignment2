@@ -1,40 +1,26 @@
 package vcmsa.ci.st10467825_assignment2
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TableLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.resources.Compatibility.Api21Impl
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class feedback : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_feedback)
 
-        // Get data from intent with null checks and logging
+        // Get data from intent with null checks
         val questionsArray = intent.getStringArrayExtra("questionsArray") ?: arrayOf()
         val answersArray = intent.getBooleanArrayExtra("answersArray") ?: booleanArrayOf()
         val userAnswersArray = intent.getBooleanArrayExtra("userAnswersArray") ?: booleanArrayOf()
         val score = intent.getIntExtra("score", 0)
 
-        // Log the received data for debugging
-        Log.d("FEEDBACK_DEBUG", "Questions: ${questionsArray.contentToString()}")
-        Log.d("FEEDBACK_DEBUG", "Correct Answers: ${answersArray.contentToString()}")
-        Log.d("FEEDBACK_DEBUG", "User Answers: ${userAnswersArray.contentToString()}")
-        Log.d("FEEDBACK_DEBUG", "Score: $score"
-
-        // View declarations
+        // Declarations
         val buttonExit = findViewById<Button>(R.id.buttonExit)
         val buttonReview = findViewById<Button>(R.id.buttonReview)
         val scoreView = findViewById<TextView>(R.id.scoreView)
@@ -43,7 +29,13 @@ class feedback : AppCompatActivity() {
         // Set score text
         scoreView.text = "Score: $score/${questionsArray.size}"
 
-        // Initialize all TextView arrays
+        FeedbackTable.visibility = View.INVISIBLE
+
+        buttonReview.setOnClickListener {
+            FeedbackTable.visibility = View.VISIBLE
+        }
+
+        // Create arrays of TextViews
         val questionViews = arrayOf(
             findViewById<TextView>(R.id.Q0),
             findViewById<TextView>(R.id.Q1),
@@ -68,7 +60,7 @@ class feedback : AppCompatActivity() {
             findViewById<TextView>(R.id.user4)
         )
 
-        // Determine how many rows to show (minimum of all array sizes)
+        // Populate the table safely
         val itemsToShow = minOf(
             questionsArray.size,
             answersArray.size,
@@ -78,40 +70,21 @@ class feedback : AppCompatActivity() {
             userAnswerViews.size
         )
 
-        Log.d("FEEDBACK_DEBUG", "Items to show: $itemsToShow")
-
-        // Populate the visible rows
         for (i in 0 until itemsToShow) {
             questionViews[i].text = questionsArray[i]
             answerViews[i].text = answersArray[i].toString()
             userAnswerViews[i].text = userAnswersArray[i].toString()
-
-            // Make sure these rows are visible
-            questionViews[i].visibility = View.VISIBLE
-            answerViews[i].visibility = View.VISIBLE
-            userAnswerViews[i].visibility = View.VISIBLE
         }
 
         // Hide any unused rows
         for (i in itemsToShow until questionViews.size) {
-            // Get the parent TableRow and hide it
-            (questionViews[i].parent as? View)?.visibility = View.GONE
+            questionViews[i].visibility = View.GONE
+            answerViews[i].visibility = View.GONE
+            userAnswerViews[i].visibility = View.GONE
         }
 
-
-
-// Initially hide the table (will be shown when review button is clicked)
-        FeedbackTable.visibility = View.GONE
-
-        // Review button click handler
-        buttonReview.setOnClickListener {
-            Log.d("FEEDBACK_DEBUG", "Review button clicked")
-            FeedbackTable.visibility = View.VISIBLE
-        }
-
-        // Exit button click handler
+        // Exit button
         buttonExit.setOnClickListener {
-            Log.d("FEEDBACK_DEBUG", "Exit button clicked")
             finish()
         }
     }
