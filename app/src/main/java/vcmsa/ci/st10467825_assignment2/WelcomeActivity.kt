@@ -20,6 +20,7 @@ class WelcomeActivity : AppCompatActivity() {
             //explicit intent
             val intent = Intent(this, flashcardQuestions::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }
