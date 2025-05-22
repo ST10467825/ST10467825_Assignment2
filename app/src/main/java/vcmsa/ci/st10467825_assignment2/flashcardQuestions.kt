@@ -82,11 +82,9 @@ class flashcardQuestions : AppCompatActivity() {
 
             // Move to next question or go to results
             if (counter == questionsArray.size - 1) {
+                nextButton.text = "Review"
                 // Ensure the last answer is recorded before proceeding
                 val intent = Intent(this, feedback::class.java).apply {
-                    putExtra("questionsArray", questionsArray)
-                    putExtra("answersArray", answersArray)
-                    putExtra("userAnswersArray", userAnswersArray)
                     putExtra("score", score)
                 }
                 startActivity(intent)

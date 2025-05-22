@@ -1,26 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/design_default_color_secondary"
     android:orientation="vertical"
     android:padding="16dp">
-
-    <!-- Empty space at top to push content down -->
+    <!--  Empty space at top to push content down  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.3"
         android:orientation="vertical" />
-
-    <!-- TableLayout with 3 columns and 6 rows -->
+    <!--  TableLayout with 3 columns and 6 rows  -->
     <TableLayout
         android:id="@+id/FeedbackTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:stretchColumns="*"
-        android:visibility="invisible"></TableLayout>
-
-    <!-- Row 1 -->
+        android:stretchColumns="*" />
+    <!--  Row 1  -->
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,8 +49,7 @@
             android:text="User Answers"
             android:textStyle="bold" />
     </TableRow>
-
-    <!-- Rows 2 to 6 -->
+    <!--  Rows 2 to 6  -->
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -66,7 +61,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Q0" />
+            android:text="Q0"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/A0"
@@ -75,7 +71,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="A0" />
+            android:text="A0"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/user0"
@@ -84,7 +81,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="8dp"
-            android:text="user0" />
+            android:text="user0"
+            android:textColor="#000000" />
     </TableRow>
 
     <TableRow
@@ -215,8 +213,7 @@
             android:padding="8dp"
             android:text="user4" />
     </TableRow>
-
-    <!-- Space between table and buttons -->
+    <!--  Space between table and buttons  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -227,20 +224,17 @@
         android:id="@+id/userScoreFeedback"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginHorizontal="110dp">
-        <!-- Score feedback text -->
-
+        android:layout_marginHorizontal="135dp">
+        <!--  Score feedback text  -->
     </TextView>
-
-    <!-- Bottom buttons and score view -->
+    <!--  Bottom buttons and score view  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         android:weightSum="3">
-
-        <!-- Exit Button (Left) -->
+        <!--  Exit Button (Left)  -->
         <Button
             android:id="@+id/buttonExit"
             android:layout_width="0dp"
@@ -248,8 +242,7 @@
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:text="Exit" />
-
-        <!-- Score TextView (Center) -->
+        <!--  Score TextView (Center)  -->
         <TextView
             android:id="@+id/scoreView"
             android:layout_width="0dp"
@@ -259,8 +252,7 @@
             android:text="Score: 0/5"
             android:textSize="18sp"
             android:textStyle="bold" />
-
-        <!-- Review Button (Right) -->
+        <!--  Review Button (Right)  -->
         <Button
             android:id="@+id/buttonReview"
             android:layout_width="0dp"
