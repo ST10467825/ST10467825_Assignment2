@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
+//declaring arrays
 val questionsArray = arrayOf(
     "Cleopatra was Egyptian by birth.",
     "The Berlin Wall fell in the late 1980s.",
@@ -25,7 +26,7 @@ val userAnswersArray = BooleanArray(5)
 class flashcardQuestions : AppCompatActivity() {
 
 
-
+    //declaring variables
     var score = 0
     var counter = 0
     var trueFalse = false
@@ -46,6 +47,7 @@ class flashcardQuestions : AppCompatActivity() {
 
         questionView.text = questionsArray[counter]
 
+        //setting up the true/false button logic
         buttonFalse.setOnClickListener {
             trueFalse = false
             wasClicked = true
@@ -57,6 +59,7 @@ class flashcardQuestions : AppCompatActivity() {
             buttonTrue.setBackgroundColor(Color.YELLOW)
         }
 
+        //setting up the next button logci
         nextButton.setOnClickListener {
             if (!wasClicked) {
                 Toast.makeText(this, "Please select an answer first", Toast.LENGTH_SHORT).show()

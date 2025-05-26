@@ -15,9 +15,8 @@ class WelcomeActivity : AppCompatActivity() {
         //Declarations
         val startButton = findViewById<Button>(R.id.startButton)
 
-
+        //telling start button to move on
         startButton.setOnClickListener {
-            //explicit intent
             val intent = Intent(this, flashcardQuestions::class.java)
             startActivity(intent)
             finish()
